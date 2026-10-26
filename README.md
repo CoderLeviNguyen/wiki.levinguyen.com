@@ -1,12 +1,12 @@
 # Verified Knowledge Wiki
 
-GitHub is the canonical source of truth. Phase A is a TypeScript prototype for atomic claim, evidence, source and review validation.
+AI-native, GitHub-backed knowledge repository for atomic, evidence-traceable claims. Independent of SecondBrain.
 
-## Run
-```bash
-npm install
-npm run check
-npm run dry-run
-```
+**No Python, TypeScript engine or GitHub Actions CI.** AI agents follow [AGENTS.md](AGENTS.md) and [SKILL.md](SKILL.md), using GitHub and research tools to perform intake, claim extraction, deduplication, evidence research, review preparation and versioning.
 
-`npm run check` runs unit tests, TypeScript type-check, JSON Schema validation and registry lint. Ingest/dedup/version are **dry-run only** until an auditable write and review workflow is implemented. No medical or legal claim is automatically verified. Public website and API are not deployed.
+- `schemas/`: declarative claim, evidence, source and review JSON schemas
+- `data/`: future claim/source/evidence/review records
+- `log.md`: change/audit log
+- `index.md`: knowledge index
+
+This repository does **not** yet contain an automatically running agent, independently verified claims, deployed public website or API. A claim is never VERIFIED just because an AI says it is.
