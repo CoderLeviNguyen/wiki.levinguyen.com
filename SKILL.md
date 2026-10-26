@@ -92,3 +92,13 @@ Image says:
 - Lemon Water — Detoxifies the liver
 
 Produce at least three separate candidate claims. All begin PENDING/PRIVATE. Research each separately, including the meaning and measurability of vague claims such as "detoxifies." Do not conclude any example is VERIFIED from this illustration.
+
+## Verified-only knowledge retention policy (2026-10-26)
+
+- User preference: **delete unverifiable data from the working knowledge base**. Only independently reviewed `VERIFIED`, `CURRENT` claims may be retained as asserted knowledge or synthesized into public wiki pages.
+- Unverified, insufficient, unsupported, ambiguous or unreviewed candidate claims must **not** be promoted to `data/claims/`, public wiki pages, `index.md` knowledge listings, or durable research batches as accepted facts.
+- When a claim cannot be verified after the available research and review, remove its candidate/intake and unapproved evidence drafts from the active branch. Do not retain indefinite PENDING claim queues unless the user explicitly requests them.
+- Do **not** delete an original raw source or falsify an audit trail; immutable originals and Git history are separate from accepted knowledge. A minimal deletion audit may identify removed paths and reason without repeating unverified assertions.
+- Process each atomic claim separately: remove only unverified ones, preserve genuinely VERIFIED/CURRENT claims with provenance. Do not turn 'not verified' into 'proven false'.
+- If no claims pass, publish no knowledge page for that input. Report counts and deleted paths honestly.
+- Never use a citation alone as reviewer approval; independent approval remains required for VERIFIED.
