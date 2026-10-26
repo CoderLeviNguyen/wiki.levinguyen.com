@@ -25,3 +25,10 @@
 - Conflicting evidence must be recorded, not hidden.
 - Previously VERIFIED claims may be reused only within their original scope and freshness window.
 - Report what was actually changed on GitHub, with links.
+
+## Facebook image output contract
+- When user supplies an infographic to fact-check for Facebook, execute `SKILL.md` STEP 01–07: IMAGE_INTAKE → WIKI_LOOKUP → WEB_FACT_CHECK → CLAIM_GATE → CONTENT_LOCK → FACEBOOK_IMAGE → IMAGE_QA_AND_DELIVERY.
+- Final image may include only independently VERIFIED/CURRENT claims; rewrite candidates must be checked as new claims. If none pass, do not generate a falsely verified image.
+- Default deliverable 1080×1350 (4:5), watermark OFF, engagement CTA and relevant health disclaimer; check image text against locked claims.
+- Do not schedule or publish via AutoLV without separate user authorization.
+- Accepted Wiki knowledge remains distinct from raw source, draft, unreviewed or rejected content.
