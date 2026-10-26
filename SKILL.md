@@ -152,3 +152,11 @@ Produce at least three separate candidate claims. All begin PENDING/PRIVATE. Res
 - Wiki agent owns extraction, research, source/evidence/review, claim gating and CONTENT_LOCK.
 - Image-generation stage owns rendering and visual QA; AutoLV may handle channel scheduling **only with explicit separate authorization**.
 - GitHub edits stay in a branch/PR for substantial changes. No Python/TypeScript automation or GitHub Actions is required.
+
+### Topic-preservation and minimal-rewrite gate (mandatory clarification)
+- **Preserve the original image's topical intent.** Extract the headline as a topic anchor; search for scientifically defensible replacement claims **within that same topic**. Do not pivot to generic nutrition, wellness, fitness or a different subject merely because a source claim fails.
+- Rewrite the title minimally, maintaining its subject and audience while removing unsupported certainty. Example: `ANTI-CANCER FOODS` → `FOODS & CANCER PREVENTION: WHAT SCIENCE SAYS`, **not** `EAT MORE PLANTS, NOT MIRACLE FOODS` as a replacement for the original infographic.
+- For each pictured item, research in order: (1) original precise claim, (2) narrower outcome-specific human evidence about that same item and topic, (3) defensible topic-related educational statement explicitly distinguishing evidence levels and uncertainty. Every new factual assertion requires its own evidence gate.
+- Preserve original item list and visual layout where possible. Drop individual items with no appropriate topic-related verified statement; do not silently replace them with unrelated foods or claims. Keep a transparent item mapping: ORIGINAL → KEEP / REWRITE / DROP → FINAL.
+- If no sufficiently evidenced claims remain **within the original topic**, stop and report inability to make a verified image. Never manufacture an unrelated 'safe' infographic as a substitute.
+- CONTENT_LOCK must include `original_topic`, `final_topic`, `title_change_reason`, and an item-by-item topic-preservation check (as Markdown manifest notes when JSON schema does not allow fields).
