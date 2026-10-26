@@ -102,3 +102,53 @@ Produce at least three separate candidate claims. All begin PENDING/PRIVATE. Res
 - Process each atomic claim separately: remove only unverified ones, preserve genuinely VERIFIED/CURRENT claims with provenance. Do not turn 'not verified' into 'proven false'.
 - If no claims pass, publish no knowledge page for that input. Report counts and deleted paths honestly.
 - Never use a citation alone as reviewer approval; independent approval remains required for VERIFIED.
+
+## Facebook verified-image production workflow (approved 2026-10-26)
+
+**Goal:** User provides one image/infographic; AI extracts and verifies its claims and creates a **new Facebook-ready image whose written content is evidence-aligned**. Wiki is the reusable verified knowledge store, not the final deliverable.
+
+### STEP 01 — IMAGE_INTAKE (read only)
+- Read image directly, capture original provenance and identify each distinct item, caption and claim.
+- Split multiple asserted benefits of one food into separate atomic claims. Do not assume the infographic's headline is true.
+- Retain source as immutable input when authorized; do not publish or copy unverified content into accepted Wiki knowledge.
+
+### STEP 02 — WIKI_LOOKUP (reuse first)
+- Search verified, current claim registry for matching food, outcome, population, dose and scope.
+- Reuse evidence only when claim scope matches and there is no new material contradiction or staleness.
+- Otherwise route the claim to STEP 03.
+
+### STEP 03 — WEB_FACT_CHECK
+- For each atomic claim, seek authoritative primary guidance and human clinical evidence appropriate to topic (e.g. NCI, NIH, PubMed original papers, WCRF, WHO).
+- Record direct source URL/DOI, exact endpoint, population, intervention, duration, design, limitations, conflicts and funding where relevant.
+- Distinguish nutrient composition from demonstrated clinical outcomes, association from causation, and animal/in-vitro findings from human evidence.
+- No invented citations, reviews, doses or verified status.
+
+### STEP 04 — CLAIM_GATE
+- **KEEP:** adequately evidenced, scoped, independently approved VERIFIED/CURRENT claim.
+- **REWRITE_AND_RECHECK:** replace exaggerated wording with a narrower, independently evidence-checked statement, including a different relevant property of the same food if necessary. This new claim must pass all gates itself.
+- **DROP:** unsupported, unverifiable, contradicted, misleading, or unreviewed claims. Do not keep in accepted knowledge, public Wiki, or final image.
+- Item count is flexible: 12 source items may become 6 or fewer. If no claims pass, stop image generation and report why.
+- Absence of proof is not proof of falsity. Remove from active candidates per verified-only retention policy, preserving immutable originals and Git history.
+
+### STEP 05 — CONTENT_LOCK (before rendering)
+- Produce a stable `CONTENT_LOCK` manifest: source image ID, claim IDs, exact final headline, subtitle, ordered item labels and benefit text, per-item evidence IDs, safety disclaimer, engagement CTA, target audience/language, aspect ratio, image size and generation constraints.
+- All factual on-image wording must map to a VERIFIED/CURRENT claim with genuine independent reviewer approval; general disclaimers do not repair unsupported claims.
+- For cancer topics, never say a single food prevents/cures/treats cancer unless specific reliable clinical evidence supports precisely that wording. Prefer accurate diet-pattern messages.
+- Keep caption/source ledger separate when references cannot fit legibly in image.
+
+### STEP 06 — FACEBOOK_IMAGE
+- Generate a **1080×1350 px (4:5)** Facebook image by default; visually distinguish items, use legible typography, accurate illustrations and consistent labels.
+- Preserve exact CONTENT_LOCK text, item count and order. Watermark OFF by default.
+- Include relevant non-misleading comment CTA and appropriate health disclaimer.
+- Image generation must not silently introduce extra factual claims. Do not schedule or publish without separate user authorization.
+
+### STEP 07 — IMAGE_QA_AND_DELIVERY
+- Inspect final image against CONTENT_LOCK: every label, claim, item, spelling, illustration, CTA, disclaimer, dimensions and source mapping.
+- Correct or regenerate errors before calling the image complete; if correction unavailable, report failure instead of claiming QA passed.
+- Return image, Facebook caption draft, traceable source ledger and per-claim verification status.
+- Store only independently VERIFIED/CURRENT reusable knowledge in Wiki, with index/log updates; never store dropped claims as accepted facts.
+
+### Integration boundary
+- Wiki agent owns extraction, research, source/evidence/review, claim gating and CONTENT_LOCK.
+- Image-generation stage owns rendering and visual QA; AutoLV may handle channel scheduling **only with explicit separate authorization**.
+- GitHub edits stay in a branch/PR for substantial changes. No Python/TypeScript automation or GitHub Actions is required.
