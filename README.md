@@ -1,5 +1,12 @@
 # Verified Knowledge Wiki
 
-An independent, evidence-first claim registry for food, health, law and other domains.
+GitHub is the canonical source of truth. Phase A is a TypeScript prototype for atomic claim, evidence, source and review validation.
 
-Status: Phase A foundation. Claims are not considered verified without traceable evidence and review. GitHub is the canonical project workspace.
+## Run
+```bash
+npm install
+npm run check
+npm run dry-run
+```
+
+`npm run check` runs unit tests, TypeScript type-check, JSON Schema validation and registry lint. Ingest/dedup/version are **dry-run only** until an auditable write and review workflow is implemented. No medical or legal claim is automatically verified. Public website and API are not deployed.
