@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "source_id",
+    "claim_id",
+    "stance",
+    "locator",
+    "assessment"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "stance": {
+      "enum": [
+        "SUPPORTS",
+        "REFUTES",
+        "MIXED",
+        "CONTEXT"
+      ]
+    },
+    "locator": {
+      "type": "string"
+    },
+    "assessment": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "revision",
+    "claim_text",
+    "domain",
+    "status",
+    "evidence_ids",
+    "source_ids",
+    "review_ids",
+    "publication_status"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "claim_text": {
+      "type": "string",
+      "minLength": 5
+    },
+    "domain": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PENDING",
+        "VERIFIED",
+        "PARTIALLY_SUPPORTED",
+        "INSUFFICIENT_EVIDENCE",
+        "CONTRADICTED",
+        "DISPUTED",
+        "SUPERSEDED"
+      ]
+    },
+    "freshness_status": {
+      "enum": [
+        "CURRENT",
+        "REVIEW_DUE",
+        "STALE"
+      ]
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "publication_status": {
+      "enum": [
+        "PRIVATE",
+        "PUBLIC"
+      ]
+    },
+    "verified_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

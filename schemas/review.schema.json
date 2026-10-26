@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_id",
+    "claim_id",
+    "reviewer",
+    "reviewed_at",
+    "decision",
+    "rationale",
+    "evidence_ids"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "reviewed_at": {
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "PENDING",
+        "VERIFIED",
+        "PARTIALLY_SUPPORTED",
+        "INSUFFICIENT_EVIDENCE",
+        "CONTRADICTED",
+        "DISPUTED",
+        "SUPERSEDED"
+      ]
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
