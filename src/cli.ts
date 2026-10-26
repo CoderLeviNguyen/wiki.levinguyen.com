@@ -1,11 +1,19 @@
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {fingerprint,loadRecords,validateRegistry} from './registry.js';
+import {planIngest, type IngestEnvelope} from './ingest.js';
 const args=process.argv.slice(2);const action=args[0];const root=resolve('.');
 if(action==='lint'){
  const errors=validateRegistry(root);
  console.log(JSON.stringify({status:errors.length?'FAIL':'PASS',errors},null,2));
  if(errors.length)process.exitCode=1;
+}else if(action==='ingest' && args.includes('--envelope')){
+ const index=args.indexOf('--input');if(index<0||!args[index+1])throw Error('--input required');
+ if(!args.includes('--dry-run'))throw Error('Ingest writes are disabled');
+ const input=JSON.parse(readFileSync(resolve(args[index+1]),'utf8')) as IngestEnvelope;
+ const existing=loadRecords(root,'claims').filter(c=>typeof c.claim_id==='string'&&typeof c.claim_text==='string').map(c=>({claim_id:String(c.claim_id),claim_text:String(c.claim_text)}));
+ const result=planIngest(input,existing);console.log(JSON.stringify(result,null,2));
+ if(result.errors.length)process.exitCode=1;
 }else if(['ingest','dedup','version'].includes(action)){
  const index=args.indexOf('--input');if(index<0||!args[index+1])throw Error('--input required');
  const item=JSON.parse(readFileSync(resolve(args[index+1]),'utf8')) as {claim_text?:string};
