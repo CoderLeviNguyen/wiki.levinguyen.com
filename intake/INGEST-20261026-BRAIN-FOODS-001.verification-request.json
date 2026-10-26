@@ -1,0 +1,277 @@
+{
+  "job_id": "INGEST-20261026-BRAIN-FOODS-001",
+  "source_type": "user_uploaded_infographic",
+  "source_sha256": "f83a76853f3bfa735280020ae5d1f4059afebe23c90df11b7ac5757364881778",
+  "source_original_url": null,
+  "source_publisher": null,
+  "source_status": "AUTHOR_UNKNOWN",
+  "registry_lookup": {
+    "path": "data/claims",
+    "result": "NOT_FOUND_404",
+    "interpretation": "No claim registry directory accessible at this path; cannot establish semantic dedup against other locations"
+  },
+  "research_access": "UNAVAILABLE_IN_THIS_RUN",
+  "fact_check_status": "NOT_COMPLETED",
+  "claims": [
+    {
+      "candidate_id": "BF-01",
+      "food": "walnuts",
+      "outcome": "memory",
+      "original_assertion": "improves memory",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-02",
+      "food": "walnuts",
+      "outcome": "cognition",
+      "original_assertion": "improves cognitive function",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-03",
+      "food": "raisins",
+      "outcome": "concentration",
+      "original_assertion": "boosts concentration",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-04",
+      "food": "raisins",
+      "outcome": "calmness",
+      "original_assertion": "boosts calmness",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-05",
+      "food": "dates",
+      "outcome": "energy",
+      "original_assertion": "provides energy",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-06",
+      "food": "dates",
+      "outcome": "fatigue",
+      "original_assertion": "reduces fatigue",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-07",
+      "food": "almonds",
+      "outcome": "memory",
+      "original_assertion": "enhances memory",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-08",
+      "food": "almonds",
+      "outcome": "learning",
+      "original_assertion": "enhances learning",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-09",
+      "food": "pistachios",
+      "outcome": "focus",
+      "original_assertion": "improves focus",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-10",
+      "food": "pistachios",
+      "outcome": "alertness",
+      "original_assertion": "improves alertness",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-11",
+      "food": "cashews",
+      "outcome": "brain_development",
+      "original_assertion": "supports brain development",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-12",
+      "food": "cashews",
+      "outcome": "mental_strength",
+      "original_assertion": "supports mental strength",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-13",
+      "food": "dried_apricots",
+      "outcome": "brain_health",
+      "original_assertion": "supports brain health",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    },
+    {
+      "candidate_id": "BF-14",
+      "food": "dried_apricots",
+      "outcome": "oxidative_stress",
+      "original_assertion": "prevents oxidative stress",
+      "status": "PENDING",
+      "publication_status": "PRIVATE",
+      "evidence_status": "NOT_RETRIEVED",
+      "review_status": "NOT_REVIEWED",
+      "required_checks": [
+        "Identify testable endpoint and target population",
+        "Search primary research, systematic reviews and authoritative guidance",
+        "Check dose, duration, comparator and measured outcome",
+        "Record direct quotation or precise locator, DOI/URL, access date",
+        "Find counterevidence and assess certainty",
+        "Require independent reviewer decision before VERIFIED"
+      ]
+    }
+  ],
+  "publication_gate": "BLOCKED",
+  "notes": [
+    "Do not treat infographic as evidence",
+    "Do not claim clinical benefit from nutrient content alone",
+    "Energy from calories is not proof of reduced fatigue",
+    "Oxidative stress prevention requires measurable outcomes and direct evidence",
+    "No citations or reviewer approval invented"
+  ]
+}
