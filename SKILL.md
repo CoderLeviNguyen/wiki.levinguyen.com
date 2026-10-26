@@ -44,3 +44,51 @@ Use when a user supplies text, a screenshot, an image, a document, a URL or a cl
 ## Output contract
 Return a structured report: INPUT, ATOMIC_CLAIMS, DEDUP, EVIDENCE, REVIEW, VALIDATION, GITHUB_CHANGES, OPEN_ISSUES.
 All evidence must be sourced; unsupported assertions remain explicitly unverified.
+
+## Standard image-to-verified-knowledge workflow (default)
+
+### One-input operating contract
+- User supplies ONE image, screenshot, link, document or text. Treat that as one ingest job with potentially many atomic claims.
+- Proceed autonomously through all steps for which tools and permissions are available; ask only for genuinely missing essential information or required approval. Never pretend to have background execution.
+- Image reading: transcribe visible text, identify each food/drink/item and its attached claim; record uncertain/illegible sections as UNREADABLE rather than guessing. If the source image is only linked, actually retrieve it before claiming to have read it.
+- Preserve original source identity and reference to the image. Store raw bytes only where an authorized tool supports it; otherwise store a durable source URL and metadata. Record SHA-256 only when genuinely calculated.
+- An infographic is a source of *claims*, not evidence that those claims are true.
+
+### Atomic claim extraction and decomposition
+- Split by subject AND asserted effect. One beverage with two claimed benefits becomes two records. Nine beverages with one benefit each yield at least nine candidates.
+- Keep exact original text, normalized assertion, outcome, qualifiers (dose, population, comparison, duration, jurisdiction, effective date) and uncertainty.
+- Never add medical benefits, numerical claims or qualifiers absent from source except as explicitly labeled research findings.
+- Initially mark every new candidate `PENDING` and `PRIVATE`; retain separate statuses for extraction, fact-check, review, freshness and publication.
+
+### Reuse-first dedup and fact-check
+- Before external research, search the GitHub claim registry for exact and semantic matches, including synonyms and scope.
+- If an existing claim is independently VERIFIED, CURRENT and equivalent in scope, reuse its existing evidence and review with provenance. Re-check only changed scope, staleness, contradictory evidence or newly material findings.
+- For new/unresolved claims, research **each claim independently** with original primary sources where possible, record exact supporting/refuting passages, URLs, access dates, applicability, confidence and limitations.
+- Never use the original infographic or another AI answer as independent proof. Distinguish absence of evidence from evidence of absence.
+- If evidence is weak or inaccessible, keep `PENDING` / `INSUFFICIENT_EVIDENCE`; if conflicting, use `DISPUTED` or `PARTIALLY_SUPPORTED` as warranted.
+- AI's assessment is a proposal. A real independent reviewer approval is required before recording `VERIFIED`; never fabricate approval.
+
+### Per-claim isolation
+- Process claims independently. Failure or lack of evidence for one item must not erase valid results for other items.
+- Record unresolved work as a per-claim queue for later research or review, with reasons. Do not claim it will run automatically without an actual scheduled agent.
+
+### GitHub record mapping
+- Keep one immutable input/source reference and one record per atomic claim.
+- Use `data/sources/`, `data/claims/`, `data/evidence/`, `data/reviews/` and `log.md`, with schema-conforming fields only.
+- Store raw-input metadata in a separate manifest only when a corresponding schema is available; do not create undocumented fields in strict JSON records.
+- Every evidence item references a real source and claim; every review references real evidence; claim IDs and revisions must be unique.
+- Append new reviews and revisions instead of overwriting audit history. Do not publish or mark VERIFIED automatically.
+- Before GitHub writes, review the intended diff, sensitive data, source provenance, schema fields, cross-references, duplicates and publication eligibility. Use branch/PR for substantial changes.
+
+### Completion report
+Return a compact per-claim table with: item, original claim, normalized claim, dedup decision, evidence status, review status, final status and relevant source links.
+Also report: input provenance, number of claims extracted, counts by status, unreadable parts, unresolved questions, files/commits actually written, and explicit NOT_CHECKED/NOT_RUN labels.
+Never report example figures as actual results.
+
+### Example (illustrative only, not verified)
+Image says:
+- Green Tea — Helps lower blood pressure
+- Beetroot Juice — Improves blood circulation
+- Lemon Water — Detoxifies the liver
+
+Produce at least three separate candidate claims. All begin PENDING/PRIVATE. Research each separately, including the meaning and measurability of vague claims such as "detoxifies." Do not conclude any example is VERIFIED from this illustration.
